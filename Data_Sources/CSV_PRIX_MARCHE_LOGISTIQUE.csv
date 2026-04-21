@@ -1,0 +1,24 @@
+﻿Date;Variete;PrixUSD_Tonne;Source;DateExport;NumeroRapportSGS;Produit;QuantiteTonnes;ValeurFOB_USD;PaysDestination;DateOperation;Reference;Debit;Credit;Devise;Libelle
+01/03/2025;Forastero;6850;ICE Futures;01/03/2026;SGS-CM-2026-0012;Beurre de cacao;24.5;35525;France;01/03/2026;TRF001;;1250000.0;XAF;Virement reçu
+02/03/2025;Forastero;6875;ICE Futures;02/03/2026;SGS-CM-2026-0015;Poudre de cacao;12.0;17760;Belgique;02/03/2026;PRLV002;450000.0;;XAF;Paiement électricité
+03/03/2025;Trinitario;7200;ICE Futures;03/03/2026;SGS-CM-2026-0018;Chocolat noir;8.5;14450;Allemagne;03/03/2026;TRF003;;2300000.0;XAF;Virement reçu
+04/03/2025;Forastero;6860;ICE Futures;04/03/2026;SGS-CM-2026-0020;Beurre de cacao;30.0;43500;Pays-Bas;04/03/2026;PRLV004;120000.0;;XAF;Paiement eau
+05/03/2025;Trinitario;7180;ICE Futures;05/03/2026;SGS-CM-2026-0023;Poudre de cacao;15.5;22940;Italie;05/03/2026;TRF005;;980000.0;XAF;Virement reçu
+06/03/2025;Criollo;8500;ICE Futures;06/03/2026;SGS-CM-2026-0027;Chocolat au lait;6.0;10200;Espagne;06/03/2026;PRLV006;300000.0;;XAF;Paiement internet
+07/03/2025;Forastero;6845;ICE Futures;07/03/2026;SGS-CM-2026-0030;Beurre de cacao;22.0;31900;Suisse;07/03/2026;TRF007;;560000.0;XAF;Virement reçu
+08/03/2025;Trinitario;7150;ICE Futures;08/03/2026;SGS-CM-2026-0034;Poudre de cacao;10.0;14800;France;08/03/2026;PRLV008;75000.0;;XAF;Fournitures bureau
+09/03/2025;Forastero;6830;ICE Futures;09/03/2026;SGS-CM-2026-0037;Café torréfié;4.5;8100;Belgique;09/03/2026;TRF009;;3400000.0;XAF;Virement reçu
+10/03/2025;Criollo;8480;ICE Futures;10/03/2026;SGS-CM-2026-0041;Beurre de cacao;28.0;40600;Allemagne;10/03/2026;PRLV010;2200000.0;;XAF;Paiement fournisseur
+11/03/2025;Forastero;6810;ICE Futures;11/03/2026;SGS-CM-2026-0044;Poudre de cacao;9.0;13320;Italie;11/03/2026;TRF011;;1250000.0;XAF;Virement reçu
+12/03/2025;Trinitario;7120;ICE Futures;12/03/2026;SGS-CM-2026-0048;Chocolat noir;12.0;20400;Espagne;12/03/2026;PRLV012;45000.0;;XAF;Réparation broyeur
+13/03/2025;Forastero;6790;ICE Futures;13/03/2026;SGS-CM-2026-0052;Beurre de cacao;35.0;50750;Pays-Bas;13/03/2026;TRF013;;875000.0;XAF;Virement reçu
+14/03/2025;Forastero;6775;ICE Futures;14/03/2026;SGS-CM-2026-0055;Poudre de cacao;14.0;20720;Suisse;14/03/2026;PRLV014;999999.0;;XAF;Transfert interne
+15/03/2025;Trinitario;7090;ICE Futures;15/03/2026;SGS-CM-2026-0059;Chocolat au lait;7.5;12750;France;15/03/2026;TRF015;;4300000.0;XAF;Virement reçu
+16/03/2025;Criollo;8520;ICE Futures;16/03/2026;SGS-CM-2026-0063;Beurre de cacao;40.0;58000;Allemagne;16/03/2026;PRLV016;670000.0;;XAF;Paiement logistique
+17/03/2025;Forastero;6750;ICE Futures;17/03/2026;SGS-CM-2026-0066;Poudre de cacao;11.0;16280;Belgique;17/03/2026;TRF017;;2800000.0;XAF;Virement reçu
+18/03/2025;Trinitario;7060;ICE Futures;18/03/2026;SGS-CM-2026-0070;Café soluble;2.5;6250;Italie;18/03/2026;PRLV018;1500000.0;;XAF;Paiement salaires
+19/03/2025;Forastero;6730;ICE Futures;19/03/2026;SGS-CM-2026-0074;Beurre de cacao;18.0;26100;Espagne;19/03/2026;TRF019;;1100000.0;XAF;Virement reçu
+20/03/2025;Forastero;6700;ICE Futures;20/03/2026;SGS-CM-2026-0078;Chocolat noir;10.0;17000;Suisse;20/03/2026;PRLV020;50000.0;;XAF;Maintenance préventive
+21/03/2025;Trinitario;7030;ICE Futures;21/03/2026;SGS-CM-2026-0082;Poudre de cacao;13.0;19240;Pays-Bas;21/03/2026;TRF021;;1750000.0;XAF;Virement reçu
+22/03/2025;Criollo;8550;ICE Futures;22/03/2026;SGS-CM-2026-0086;Beurre de cacao;26.0;37700;France;22/03/2026;PRLV022;330000.0;;XAF;Paiement assurance
+23/03/2025;Forastero;6680;ICE Futures;23/03/2026;SGS-CM-2026-0090;Chocolat au lait;5.0;8500;Allemagne;23/03/2026;TRF023;;2200000.0;XAF;Virement reçu

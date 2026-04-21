@@ -1,0 +1,26 @@
+﻿AchatID;NumeroBonAchat;FournisseurID;ProduitID;DateAchat;QuantiteTonnes;PrixTotalHT;PrixMoyenParTonne;NumeroLotFournisseur;StatutControleAchat;DateCreationAchat;FournisseurNom;FournisseurTypeProduit;FournisseurAdresse;FournisseurVille;FournisseurPays;CodeProduit;ProduitNom;ProduitFamille;Unite;PrixUnitaireStandard
+11;ACH-0011;401;26;10/02/2025;25.5;45900.0;1800.0;SW240210;Conforme;2026-04-09 17:15:02.947;Coopérative Sud-Ouest;fèves cacao;Route de Kumba;Buea;Cameroun;MP001;Fèves de cacao;cacao semi-fini;kg;1.8
+12;ACH-0012;402;26;12/02/2025;18.2;32760.0;1800.0;CE240212;Conforme;2026-04-09 17:15:02.947;Coopérative Centre;fèves cacao;PK 10 Mbankomo;Yaoundé;Cameroun;MP001;Fèves de cacao;cacao semi-fini;kg;1.8
+13;ACH-0013;403;26;22/02/2025;22.0;39600.0;1800.0;LI240222;En attente;2026-04-09 17:15:02.947;Coopérative Littoral;fèves cacao;Bonabéri;Douala;Cameroun;MP001;Fèves de cacao;cacao semi-fini;kg;1.8
+14;ACH-0014;404;26;25/02/2025;14.5;26100.0;1800.0;SUD240225;Conforme;2026-04-09 17:15:02.947;Coopérative Sud;fèves cacao;Kribi ville;Kribi;Cameroun;MP001;Fèves de cacao;cacao semi-fini;kg;1.8
+15;ACH-0015;405;26;01/03/2025;30.0;54000.0;1800.0;ES240301;Conforme;2026-04-09 17:15:02.947;Coopérative Est;fèves cacao;Bertoua;Bertoua;Cameroun;MP001;Fèves de cacao;cacao semi-fini;kg;1.8
+16;ACH-0016;406;26;07/03/2025;20.0;36000.0;1800.0;OU240307;Non conforme;2026-04-09 17:15:02.947;Coopérative Ouest;fèves cacao;Bafoussam;Bafoussam;Cameroun;MP001;Fèves de cacao;cacao semi-fini;kg;1.8
+17;ACH-0017;407;26;13/03/2025;35.0;63000.0;1800.0;NOR240313;En attente;2026-04-09 17:15:02.947;Coopérative Nord;fèves cacao;Garoua;Garoua;Cameroun;MP001;Fèves de cacao;cacao semi-fini;kg;1.8
+18;ACH-0018;408;26;18/03/2025;16.0;28800.0;1800.0;MIF240318;Conforme;2026-04-09 17:15:02.947;Coopérative Mifi;fèves cacao;Mifi;Bafang;Cameroun;MP001;Fèves de cacao;cacao semi-fini;kg;1.8
+19;ACH-0019;409;26;20/03/2025;28.0;50400.0;1800.0;BIO240320;Conforme;2026-04-09 17:15:02.947;Cacao Bio Cameroun SARL;fèves cacao;Quartier industriel;Douala;Cameroun;MP001;Fèves de cacao;cacao semi-fini;kg;1.8
+20;ACH-0020;410;26;22/03/2025;12.5;22500.0;1800.0;PLA240322;Conforme;2026-04-09 17:15:02.947;Plantations du Sud;fèves cacao;Akom II;Ebolowa;Cameroun;MP001;Fèves de cacao;cacao semi-fini;kg;1.8
+21;ACH-0021;411;27;15/02/2025;10.0;9000.0;900.0;SUCRE0215;Conforme;2026-04-09 17:15:02.947;SOSUCAM;sucre;Quartier industriel;Douala;Cameroun;MP002;Sucre blanc;cacao semi-fini;kg;0.9
+22;ACH-0022;412;27;03/03/2025;15.0;13500.0;900.0;SUCRE0303;Conforme;2026-04-09 17:15:02.947;Sucre Mondial;sucre;Le Havre;Le Havre;France;MP002;Sucre blanc;cacao semi-fini;kg;0.9
+23;ACH-0023;413;27;15/03/2025;12.0;10800.0;900.0;SUCBR0315;En attente;2026-04-09 17:15:02.947;Sucre Brésil;sucre;São Paulo;São Paulo;Brésil;MP002;Sucre blanc;cacao semi-fini;kg;0.9
+24;ACH-0024;414;27;17/03/2025;8.0;7200.0;900.0;SUCAF0317;Conforme;2026-04-09 17:15:02.947;Sucre Afrique;sucre;Abidjan;Abidjan;Côte d'Ivoire;MP002;Sucre blanc;cacao semi-fini;kg;0.9
+25;ACH-0025;415;28;18/02/2025;8.5;27200.0;3200.0;LAIT0218;Conforme;2026-04-09 17:15:02.947;Laitpoudre SARL;lait;Rue des Fermes;Douala;Cameroun;MP003;Lait en poudre;cacao semi-fini;kg;3.2
+26;ACH-0026;416;28;05/03/2025;9.0;28800.0;3200.0;LAIT0305;Conforme;2026-04-09 17:15:02.947;Laiterie Normande;lait;Caen;Caen;France;MP003;Lait en poudre;cacao semi-fini;kg;3.2
+27;ACH-0027;417;28;16/03/2025;7.0;22400.0;3200.0;IRL0316;Non conforme;2026-04-09 17:15:02.947;Lait Irlande;lait;Dublin;Dublin;Irlande;MP003;Lait en poudre;cacao semi-fini;kg;3.2
+28;ACH-0028;418;28;19/03/2025;10.0;32000.0;3200.0;DAIRY0319;Conforme;2026-04-09 17:15:02.947;Dairy International;lait;Rotterdam;Rotterdam;Pays-Bas;MP003;Lait en poudre;cacao semi-fini;kg;3.2
+29;ACH-0029;419;28;21/03/2025;6.5;20800.0;3200.0;AFR0321;En attente;2026-04-09 17:15:02.947;Africa Dairy Supply;lait;Johannesburg;Johannesburg;Afrique du Sud;MP003;Lait en poudre;cacao semi-fini;kg;3.2
+30;ACH-0030;420;23;20/02/2025;6.0;21000.0;3500.0;CAFE0220;Conforme;2026-04-09 17:15:02.947;Café Vert Ouest;café vert;Dschang;Dschang;Cameroun;CA004;Café soluble 200g;café;pièce;5.0
+31;ACH-0031;421;23;06/03/2025;4.5;15750.0;3500.0;CAFDSCH0306;Conforme;2026-04-09 17:15:02.947;Coopérative Café de Dschang;café vert;Dschang centre;Dschang;Cameroun;CA004;Café soluble 200g;café;pièce;5.0
+32;ACH-0032;422;23;10/03/2025;5.2;18200.0;3500.0;CAFBFS0310;En attente;2026-04-09 17:15:02.947;Coopérative Café de Bafoussam;café vert;Quartier administratif;Bafoussam;Cameroun;CA004;Café soluble 200g;café;pièce;5.0
+33;ACH-0033;423;23;12/03/2025;3.8;13300.0;3500.0;CAFOUEST0312;Conforme;2026-04-09 17:15:02.947;Coopérative Café de l'Ouest;café vert;Bangangté;Bangangté;Cameroun;CA004;Café soluble 200g;café;pièce;5.0
+34;ACH-0034;424;23;14/03/2025;7.0;24500.0;3500.0;UNICAF0314;Conforme;2026-04-09 17:15:02.947;Union des Coopératives Café du Centre;café vert;Mvog Mbi;Yaoundé;Cameroun;CA004;Café soluble 200g;café;pièce;5.0
+35;ACH-0035;425;23;20/03/2025;4.0;14000.0;3500.0;PLACAF0320;Non conforme;2026-04-09 17:15:02.947;Plantations Café du Sud;café vert;Ebolowa centre;Ebolowa;Cameroun;CA004;Café soluble 200g;café;pièce;5.0
