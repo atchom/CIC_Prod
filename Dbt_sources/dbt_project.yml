@@ -1,0 +1,84 @@
+# Name your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: 'cic_dw'
+version: '1.0.0'
+config-version: 2
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'cic_dw'
+
+# These configurations specify where dbt should look for different types of files.
+# The `model-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+# Configuring models
+# Full documentation: https://docs.getdbt.com/docs/configuring-models
+
+models:
+  cic_dw:
+    # Config applied to all models in the project
+    +snowflake_warehouse: "sandji_dbt_wh"
+    
+    # -------------------------
+    # 1. STAGING MODELS
+    # -------------------------
+    staging:
+      +schema: staging
+      +materialized: table
+      +tags: ["staging"]
+      
+      # Configuration spécifique pour stg_prix_marche_logistique
+      stg_prix_marche_logistique:
+        +alias: stg_prix_marche_logistique
+        +description: "Données staging des prix du marché logistique cacao"
+    marts:
+      +schema: marts
+      +materialized: table
+      +tags: ["marts"]
+      
+      dim_temps:
+        +description: "Dimension temps/calendrier"
+      
+      dim_client:
+        +description: "Dimension client"
+      
+      dim_produit:
+        +description: "Dimension produit"
+      
+      dim_usine:
+        +description: "Dimension usine"
+      
+      dim_employe:
+        +description: "Dimension employé"
+      
+      fait_ventes:
+        +description: "Fait ventes - transactions de vente"
+      
+      fait_production:
+        +description: "Fait production - ordres de fabrication"
+      
+      fait_achats:
+        +description: "Fait achats - achats fournisseurs"
+      
+      fait_paie:
+        +description: "Fait paie - rémunérations et présence"
+
+      # Configuration pour stg_rapport_mensuel
+     # stg_rapport_mensuel:
+      #  +alias: stg_rapport_mensuel
+      #  +description: "Données staging du rapport mensuel cacao"
+  
+     # stg_achats_fournisseurs:
+     #   +alias: stg_achats_fournisseurs
+     #   +description: "Données staging des achats fournisseurs"
