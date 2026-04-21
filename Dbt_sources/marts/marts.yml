@@ -1,0 +1,73 @@
+version: 2
+
+models:
+  # =====================================================
+  # TABLES DE DIMENSIONS
+  # =====================================================
+  
+  - name: dim_temps
+    description: "Dimension temps/calendrier pour toutes les analyses temporelles"
+    columns:
+      - name: date
+        description: "Date complète"
+        tests:
+          - not_null
+          - unique
+      
+      - name: date_key
+        description: "Clé de date au format YYYYMMDD"
+        tests:
+          - not_null
+          - unique
+      
+      - name: annee
+        description: "Année (AAAA)"
+        tests:
+          - not_null
+      
+      - name: mois
+        description: "Mois (1-12)"
+        tests:
+          - not_null
+      
+      - name: nom_mois
+        description: "Nom du mois (Janvier, Février, etc.)"
+      
+      - name: trimestre_nom
+        description: "Trimestre (T1, T2, T3, T4)"
+      
+      - name: est_weekend
+        description: "TRUE si le jour est samedi ou dimanche"
+      
+      - name: saison
+        description: "Saison (Hiver, Printemps, Été, Automne)"
+  - name: dim_client
+    description: "Dimension client avec classification"
+    columns:
+      - name: client_id
+        description: "Identifiant unique du client"
+        tests:
+          - not_null
+          - unique
+      
+      - name: client_nom
+        description: "Nom du client"
+        tests:
+          - not_null
+      
+      - name: type_client
+        description: "Type de client (grossiste, exportateur, industriel, distributeur)"
+        tests:
+          - accepted_values:
+              values: ['grossiste', 'exportateur', 'industriel', 'distributeur']
+      
+      - name: client_pays
+        description: "Pays du client"
+      
+      - name: categorie_client
+        description: "Catégorie client (Export, Industrie, Grossiste, Distribution)"
+      
+      - name: type_zone
+        description: "Zone géographique (Local pour Cameroun, International sinon)"
+
+      
