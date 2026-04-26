@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: raw
+    database: CIC_DBT_DB
+    schema: RAW
+    tables:
+      - name: RAW_PRIX_MARCHE_LOGISTIQUE
+        description: "Table brute contenant les données de prix du marché et logistique"
+      
+      - name: RAW_RAPPORT_MENSUEL
+        description: "Table brute contenant les données du rapport mensuel"
+      - name: RAW_ACHATS_FOURNISSEURS
+        description: "Table brute contenant les données des achats fournisseurs"
+      - name: RAW_PRODUCTION_QUALITE
+        description: "Table brute contenant les données de production et contrôle qualité"
+      - name: RAW_RH_PAIE
+        description: "Table brute contenant les données RH et paie"
+      - name: RAW_VENTES_STOCK
+        description: "Table brute contenant les données des ventes et mouvements de stock"
