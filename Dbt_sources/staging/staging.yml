@@ -1,0 +1,399 @@
+version: 2
+
+
+models:
+
+  - name: stg_prix_marche_logistique
+    description: "Nettoyage, typage et normalisation des données de prix du marché et logistique issues de RAW_PRIX_MARCHE_LOGISTIQUE."
+    columns:
+
+      - name: date
+        description: "Date principale de l’enregistrement."
+        tests:
+          - not_null
+
+      - name: variete
+        description: "Variété du produit (ex: cacao grade 1, grade 2)."
+
+      - name: prixusd_tonne
+        description: "Prix en USD par tonne."
+        tests:
+          - not_null
+
+      - name: source
+        description: "Source de l’information (SGS, marché international, etc.)."
+
+      - name: dateexport
+        description: "Date d’exportation."
+
+      - name: numerorapportsgs
+        description: "Numéro du rapport SGS associé."
+
+      - name: produit
+        description: "Nom du produit exporté."
+
+      - name: quantitetonnes
+        description: "Quantité exportée en tonnes."
+
+      - name: valeurfob_usd
+        description: "Valeur FOB en USD."
+
+      - name: paysdestination
+        description: "Pays de destination de l’export."
+
+      - name: dateoperation
+        description: "Date de l’opération logistique."
+
+      - name: reference
+        description: "Référence de l’opération."
+
+      - name: debit
+        description: "Montant débité."
+
+      - name: credit
+        description: "Montant crédité."
+
+      - name: devise
+        description: "Devise utilisée."
+
+      - name: libelle
+        description: "Libellé descriptif de l’opération."
+  
+  - name: stg_rapport_mensuel
+    description: "Nettoyage, typage et normalisation des données du rapport mensuel issues de RAW_RAPPORT_MENSUEL avec gestion des anomalies."
+    columns:
+      - name: mois
+        description: "Mois du rapport (format: YYYY-MM valide)"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: '2024-01'
+              max_value: '2030-12'
+      
+      - name: chiffre_affaires_xaf
+        description: "Chiffre d'affaires en Francs CFA (XAF) - valeurs négatives exclues"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+      
+      - name: production_totale_tonnes
+        description: "Production totale en tonnes - valeurs négatives exclues"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+      
+      - name: ventes_totales_tonnes
+        description: "Ventes totales en tonnes - valeurs négatives exclues, NULL pour données manquantes"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+      
+      - name: stock_final_tonnes
+        description: "Stock final en tonnes - valeurs négatives exclues"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+      
+      - name: nb_commandes
+        description: "Nombre de commandes - valeurs négatives exclues"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+      
+      - name: nb_employes
+        description: "Nombre d'employés - doit être > 0"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 1
+      
+      - name: taux_rotation_stock
+        description: "Taux de rotation du stock - valeurs négatives exclues"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+      
+      - name: data_quality_flag
+        description: "Indicateur de qualité des données (VALID, NEGATIVE_*, MISSING_*, INVALID_*)"
+        tests:
+          - accepted_values:
+              values: ['VALID', 'NEGATIVE_REVENUE', 'NEGATIVE_PRODUCTION', 'MISSING_SALES', 
+                      'MISSING_STOCK', 'NEGATIVE_ORDERS', 'INVALID_EMPLOYEES', 'NEGATIVE_TURNOVER', 'INVALID_DATE']
+
+  - name: stg_achats_fournisseurs
+    description: "Nettoyage, typage et normalisation des données d'achats fournisseurs"
+    columns:
+      - name: achat_id
+        description: "Identifiant unique de l'achat"
+        tests:
+          - not_null
+          - unique
+      
+      - name: numero_bon_achat
+        description: "Numéro du bon d'achat"
+        tests:
+          - not_null
+      
+      - name: fournisseur_id
+        description: "Identifiant du fournisseur"
+        tests:
+          - not_null
+      
+      - name: produit_id
+        description: "Identifiant du produit"
+        tests:
+          - not_null
+      
+      - name: date_achat
+        description: "Date de l'achat"
+        tests:
+          - not_null
+      
+      - name: quantite_tonnes
+        description: "Quantité achetée en tonnes"
+        tests:
+          - not_null
+      
+      - name: prix_total_ht
+        description: "Prix total hors taxes"
+        tests:
+          - not_null
+      
+      - name: prix_moyen_par_tonne
+        description: "Prix moyen par tonne"
+      
+      - name: statut_controle_achat
+        description: "Statut du contrôle de l'achat (Conforme, Non conforme, En attente)"
+        tests:
+          - accepted_values:
+              values: ['Conforme', 'Non conforme', 'En attente']
+      
+      - name: fournisseur_pays
+        description: "Pays du fournisseur"
+      
+      - name: produit_famille
+        description: "Famille du produit"
+
+  - name: stg_production_qualite
+    description: "Nettoyage, typage et normalisation des données de production et contrôle qualité"
+    columns:
+      - name: of_id
+        description: "Identifiant de l'ordre de fabrication"
+        tests:
+          - not_null
+      
+      - name: numero_of
+        description: "Numéro de l'ordre de fabrication"
+        tests:
+          - not_null
+      
+      - name: usine_id
+        description: "Identifiant de l'usine"
+        tests:
+          - not_null
+      
+      - name: usine_nom
+        description: "Nom de l'usine"
+      
+      - name: produit_fini_id
+        description: "Identifiant du produit fini"
+      
+      - name: produit_fini_nom
+        description: "Nom du produit fini"
+      
+      - name: date_lancement
+        description: "Date de lancement de la production"
+      
+      - name: date_fin_prevue
+        description: "Date de fin prévue"
+      
+      - name: date_fin_reelle
+        description: "Date de fin réelle"
+      
+      - name: quantite_prevue
+        description: "Quantité prévue"
+        tests:
+          - not_null
+      
+      - name: quantite_reelle
+        description: "Quantité réelle produite"
+      
+      - name: rendement_pourcentage
+        description: "Rendement de production (quantité réelle / quantité prévue * 100)"
+      
+      - name: statut
+        description: "Statut de l'ordre (terminé, en cours, planifié, annulé)"
+        tests:
+          - accepted_values:
+              values: ['terminé', 'en cours', 'planifié', 'annulé']
+      
+      - name: qualite_controle
+        description: "Résultat du contrôle qualité (OK, non conforme, En attente)"
+        tests:
+          - accepted_values:
+              values: ['OK', 'non conforme', 'En attente']
+      
+      - name: parametre
+        description: "Paramètre contrôlé"
+      
+      - name: valeur_mesure
+        description: "Valeur mesurée"
+      
+      - name: seuil_conformite
+        description: "Seuil de conformité"
+      
+      - name: est_conforme
+        description: "Indique si le contrôle est conforme (TRUE/FALSE)"
+
+  - name: stg_rh_paie
+    description: "Nettoyage, typage et normalisation des données RH et paie"
+    columns:
+      - name: employe_id
+        description: "Identifiant unique de l'employé"
+        tests:
+          - not_null
+          - unique
+      
+      - name: matricule
+        description: "Matricule de l'employé"
+        tests:
+          - not_null
+      
+      - name: sexe
+        description: "Sexe de l'employé (M/F)"
+        tests:
+          - accepted_values:
+              values: ['M', 'F']
+      
+      - name: date_naissance
+        description: "Date de naissance"
+      
+      - name: nationalite
+        description: "Nationalité de l'employé"
+      
+      - name: situation_maritale
+        description: "Situation maritale"
+        tests:
+          - accepted_values:
+              values: ['Marié(e)', 'Célibataire', 'Divorcé(e)', 'Veuf/Veuve']
+      
+      - name: poste
+        description: "Poste occupé"
+      
+      - name: date_embauche
+        description: "Date d'embauche"
+      
+      - name: salaire_contractuel
+        description: "Salaire contractuel"
+      
+      - name: departement_nom
+        description: "Nom du département"
+      
+      - name: usine_nom
+        description: "Nom de l'usine"
+      
+      - name: type_site
+        description: "Type de site (Siege/Usine)"
+      
+      - name: mois_paie
+        description: "Mois de paie"
+        tests:
+          - not_null
+      
+      - name: salaire_brut
+        description: "Salaire brut"
+        tests:
+          - not_null
+      
+      - name: retenues
+        description: "Montant des retenues"
+      
+      - name: salaire_net
+        description: "Salaire net"
+        tests:
+          - not_null
+      
+      - name: taux_prelevement_pourcentage
+        description: "Taux de prélèvement en pourcentage"
+      
+      - name: heures_travaillees
+        description: "Heures travaillées"
+      
+      - name: heures_sup
+        description: "Heures supplémentaires"
+      
+      - name: total_heures
+        description: "Total des heures (normales + sup)"
+
+  - name: stg_ventes_stock
+    description: "Nettoyage, typage et normalisation des données des ventes et mouvements de stock"
+    columns:
+      - name: commande_id
+        description: "Identifiant de la commande"
+        tests:
+          - not_null
+      
+      - name: numero_commande
+        description: "Numéro de la commande"
+        tests:
+          - not_null
+      
+      - name: client_id
+        description: "Identifiant du client"
+        tests:
+          - not_null
+      
+      - name: client_nom
+        description: "Nom du client"
+      
+      - name: type_client
+        description: "Type de client (grossiste, exportateur, industriel, distributeur)"
+        tests:
+          - accepted_values:
+              values: ['grossiste', 'exportateur', 'industriel', 'distributeur']
+      
+      - name: client_pays
+        description: "Pays du client"
+      
+      - name: date_commande
+        description: "Date de la commande"
+        tests:
+          - not_null
+      
+      - name: date_livraison_prevue
+        description: "Date de livraison prévue"
+      
+      - name: delai_livraison_jours
+        description: "Délai de livraison prévu en jours"
+      
+      - name: montant_total_ht
+        description: "Montant total hors taxes de la commande"
+        tests:
+          - not_null
+      
+      - name: statut_commande
+        description: "Statut de la commande"
+        tests:
+          - accepted_values:
+              values: ['Livrée', 'Expédiée', 'Confirmée', 'En attente']
+      
+      - name: produit_nom
+        description: "Nom du produit"
+      
+      - name: produit_famille
+        description: "Famille du produit (chocolat, cacao semi-fini, boisson, café)"
+      
+      - name: quantite_commandee
+        description: "Quantité commandée"
+        tests:
+          - not_null
+      
+      - name: prix_unitaire_vente
+        description: "Prix unitaire de vente"
+      
+      - name: type_mouvement
+        description: "Type de mouvement stock (sortie)"
+      
+      - name: quantite_mouvement
+        description: "Quantité du mouvement"
